@@ -5,7 +5,7 @@ from PIL import Image
 
 from .output import Output
 
-# Portions of this cod takern from:
+# Portions of this cod taken from:
 # https://gist.github.com/drakeguan/6303065
 
 

@@ -61,3 +61,16 @@ class WindowsProcessor(object):
             zip_ref.close()
 
             Output.checkpoint('Extract complete.')
+
+    def encode_to_video(self, fps):
+        cmd = '{} -r {} -i "{}" -c:v libx264 -preset veryslow -crf 0 -y "{}"'.format(
+            os.path.join(self._working_dir, 'ffmpeg',
+                         'ffmpeg-4.1.3-win64-static', 'bin', 'ffmpeg.exe'),
+            fps,
+            os.path.join(self._working_dir, 'pngs', '%06d.png'),
+            os.path.join(self._working_dir, 'output.mp4')
+        )
+
+        Output.info('Running: ' + cmd)
+
+        os.system(cmd)

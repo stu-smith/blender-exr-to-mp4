@@ -6,8 +6,10 @@
         "ffmpeg",
         "imath",
         "isfile",
+        "libx",
         "numpy",
         "pipenv",
-        "pngs"
+        "pngs",
+        "vcodec"
     ]
 }

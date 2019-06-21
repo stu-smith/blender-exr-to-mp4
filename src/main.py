@@ -11,11 +11,13 @@ def main():
     zip_url = command_line.url
     working_dir = command_line.folder
     channels = command_line.channels
+    fps = command_line.fps
 
     Output.title('Starting EXR to MP4 conversion')
     Output.info('ZIP URL       : ' + zip_url)
     Output.info('Working folder: ' + working_dir)
     Output.info('Channels      : ' + ','.join(channels))
+    Output.info('FPS           : ' + str(fps))
 
     processor = WindowsProcessor(working_dir)
 
@@ -50,6 +52,9 @@ def main():
                 png_path,
                 channels
             )
+
+    Output.title('Encoding video')
+    processor.encode_to_video(fps)
 
     Output.title('Process complete!')
     Output.info('Done.')

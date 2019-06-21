@@ -27,11 +27,19 @@ class CommandLine(object):
             help='Specifies the three channels that will be used to extract RGB information.'
         )
 
+        parser.add_argument(
+            '--fps',
+            required=False,
+            default='24',
+            help='Specifies the video frame-rate.'
+        )
+
         args = parser.parse_args()
 
         self.url = args.url
         self.folder = args.folder
         self.channels = args.channels.split(',')
+        self.fps = args.fps
 
         if len(self.channels) != 3:
             Output.fatal(
