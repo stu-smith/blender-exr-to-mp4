@@ -42,6 +42,14 @@ Example: my Blender network render master is at `192.168.0.200`, and I want to c
 pipenv run python -m src.main --url http://192.168.0.200:8000/result_1.zip --folder C:\temp\job_1
 ```
 
+Other options:
+
+* `--channels <R>,<G>,<B>`
+  * Specify the names of the three channels to extract RGB data from.
+  * Defaults to: `Combined.Combined.R,Combined.Combined.G,Combined.Combined.B`
+* `--fps <N>`
+  * Specifies the output video framerate.
+  * Defaults to `24`
 
 
 ## Acknowledgements
