@@ -2,19 +2,21 @@
 
 Converts a ZIP of Blender EXR files into an MP4 video.
 
-Why do we need to do this? When using network rendering, the final output is a ZIP of EXR files.
+Why do we need to do this? When using Blender network rendering, the final output is a ZIP of EXR files.
 Unfortunately, those EXR files are multi-channel, and cannot be easily directly converted to an MP4,
 either with Blender, or with ffmpeg.
+
+This utility handles the entire workflow: downloading ffmpeg, downloading the ZIP, extracting,
+converting the EXRs to PNGs (with appropriate gamma-correction), and converting the PNGs to lossless MP4.
 
 Current limitations:
 
 * Windows-only;
-* Only creates lossless H.264 videos.
+* Only creates lossless H.264 videos;
+* Fixed gamma correction.
 
-Both of the above limitations would be very simple to fix; however I just don't have time right now.
+None of the above limitations would be very difficult to fix; however I just don't have time right now.
 If you do fix them, please send a pull request and I'll be very grateful!
-
-I have included a custom WHL file from: https://www.lfd.uci.edu/~gohlke/pythonlibs/
 
 
 
