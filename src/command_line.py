@@ -9,9 +9,21 @@ class CommandLine(object):
         parser = argparse.ArgumentParser()
 
         parser.add_argument(
-            '--url',
+            '--url-format',
             required=True,
-            help='Specifies the URL of the ZIP containing the EXR files.'
+            help='Specifies the format of the URLs for the EXR files.'
+        )
+
+        parser.add_argument(
+            '--start-num',
+            required=True,
+            help='Specifies the index of the first EXR file.'
+        )
+
+        parser.add_argument(
+            '--end-num',
+            required=True,
+            help='Specifies the index of the last EXR file.'
         )
 
         parser.add_argument(
@@ -36,10 +48,12 @@ class CommandLine(object):
 
         args = parser.parse_args()
 
-        self.url = args.url
+        self.url_format = args.url_format
+        self.start_num = int(args.start_num)
+        self.end_num = int(args.end_num)
         self.folder = args.folder
         self.channels = args.channels.split(',')
-        self.fps = args.fps
+        self.fps = int(args.fps)
 
         if len(self.channels) != 3:
             Output.fatal(

@@ -67,7 +67,7 @@ class WindowsProcessor(object):
             os.path.join(self._working_dir, 'ffmpeg',
                          'ffmpeg-4.1.3-win64-static', 'bin', 'ffmpeg.exe'),
             fps,
-            os.path.join(self._working_dir, 'pngs', '%06d.png'),
+            os.path.join(self._working_dir, 'pngs', 'input-%d.png'),
             os.path.join(self._working_dir, 'output.mp4')
         )
 
