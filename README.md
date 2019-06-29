@@ -49,7 +49,7 @@ Other options:
   * Defaults to: `Combined.Combined.R,Combined.Combined.G,Combined.Combined.B`
 * `--fps <N>`
   * Specifies the output video framerate.
-  * Defaults to `24`
+  * Defaults to `30`
 
 
 ## Acknowledgements

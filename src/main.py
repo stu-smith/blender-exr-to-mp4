@@ -38,7 +38,8 @@ def main():
 
     for exr_i in range(start_num_exr, end_num_exr + 1):
         exr_url = url_format % exr_i
-        processor.ensure_download_file(exr_url, os.path.join(exrs_dir, 'input-%d.exr1' % exr_i))
+        exr_filename = processor.get_exr_filename(exr_i)
+        processor.ensure_download_file(exr_url, os.path.join(exrs_dir, exr_filename))
 
     Output.title('Converting EXR files')
 

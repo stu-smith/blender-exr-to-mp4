@@ -42,7 +42,7 @@ class CommandLine(object):
         parser.add_argument(
             '--fps',
             required=False,
-            default='24',
+            default='30',
             help='Specifies the video frame-rate.'
         )
 
